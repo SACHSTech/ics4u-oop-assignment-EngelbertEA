@@ -4,11 +4,6 @@ import TwitchChat.*;
 
 public class Viewer{
 
-  private int intChannelPoints;
-  private int intDonations;
-  private int intBits;
-  private String strBroadcaster;
-
   public Viewer(String username, int Points, int Donations, int Bits, String Streamer) {
     this.intChannelPoints = intPoints;
     this.intDonations = Donations;
