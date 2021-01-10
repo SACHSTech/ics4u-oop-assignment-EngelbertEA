@@ -8,8 +8,10 @@ public class Users {
   private String strGame;
   private int intDonations;
   private int intGiftedSubs;
+  private int intChannelPoints;
   private int intBits;
   private int intClips;
+  private int intOption;
   
   /** 
   * Constructor: Creates a new user Instance
@@ -20,13 +22,14 @@ public class Users {
   * @param Bits - the amount of Bits you are cheering
   * @param Clips - the amount of Clips you are creating
   */
-  public Users(String Username, String Game, int GiftedSubs, int Donations, int Bits, int Clips) {
+  public Users(String Username, String Game, int GiftedSubs, int Donations, int Bits, int Clips, int Option) {
     this.strUsername = Username;
     this.strGame = Game;
     this.intGiftedSubs = GiftedSubs;
     this.intDonations = Donations;
     this.intBits = Bits;
     this.intClips = Clips;
+    this.intOption = Option;
   }
 
   /**
@@ -58,6 +61,13 @@ public class Users {
     return intDonations;
   }
   /**
+  * Getter method for intChannelPoints
+  * @return amount of Channel Points a user has
+  */
+  public int getChannelPoints() {
+    return intChannelPoints;
+  }
+  /**
   * Getter method for intBits
   * @return amount of Bits cheering
   */
@@ -70,5 +80,12 @@ public class Users {
   */
   public int getClips() {
     return intClips;
+  }
+  /**
+  * Getter method for intOption
+  * @return option numbers for chat function
+  */
+  public int getOption(){
+    return intOption;
   }
 }

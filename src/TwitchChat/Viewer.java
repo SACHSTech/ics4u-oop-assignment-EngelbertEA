@@ -2,28 +2,25 @@ package TwitchChat;
 
 import TwitchChat.*;
 
-public class Viewer{
+public class Viewer extends Users{
 
-  public Viewer(String username, int Points, int Donations, int Bits, String Streamer) {
-    this.intChannelPoints = intPoints;
-    this.intDonations = Donations;
-    this.intBits = Bits;
-    this.strBroadcaster = Streamer;
-  }
+  private String strRewards;
 
-  public int intGetPoints() {
-    return intChannelPoints;
-  }
+  public Viewer(String Username, String Game, int GiftedSubs, int Donations, int Bits, int Clips, String Rewards, int Option) {
+    super(Username, Game, GiftedSubs, Donations, Bits, Clips, Option);
+    this.strRewards = Rewards;
 
-  public int intGetDonations() {
-    return intDonations;
-  }
-
-  public int intGetBits() {
-    return intBits;
-  }
-
-  public String getStreamerName() {
-    return strBroadcaster;
+  
+  } 
+  public String getRewards(){
+    return strRewards;
   }
 }
+
+
+1 POG
+2 nice stream!
+3 cringe booooo!
+4 lame stream! boring!
+5 KekW
+6 KappaW
