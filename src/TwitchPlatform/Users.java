@@ -1,83 +1,66 @@
-package TwitchChat;
+package TwitchPlatform;
 
-import TwitchChat.*;
+/**
+* Class file for users, the viewers and broadcasters
+* 
+*/
 
 public class Users {
 
+  // creating variables
   private String strUsername;
-  private String strGame;
-  private int intDonations;
-  private int intGiftedSubs;
-  private int intBits;
-  private int intClips;
-  private int intOption;
-  
-  /** 
-  * Constructor: Creates a new user Instance
-  * @param Username - person's username on Twitch
-  * @param Game - the videogame the person is watching
-  * @param GiftedSubs - the amount of Channel points a viewer has
-  * @param Donations - the amount of Donations 
-  * @param Bits - the amount of Bits you are cheering
-  * @param Clips - the amount of Clips you are creating
+  private int intAge;
+  private int intCreditCard;
+
+  /**
+  * Constructor - creates new instance of an user object
+  *
+  * @param username - name of the streamer 
+  * @param age - age of the streamer 
+  * @param creditCardNumber - credit card of the streamer
   */
-  public Users(String Username, String Game, int GiftedSubs, int Donations, int Bits, int Clips, int Option) {
-    this.strUsername = Username;
-    this.strGame = Game;
-    this.intGiftedSubs = GiftedSubs;
-    this.intDonations = Donations;
-    this.intBits = Bits;
-    this.intClips = Clips;
-    this.intOption = Option;
+  public Users(String username, int age, int creditCardNumber) {
+
+    this.strUsername = username;
+    this.intAge = age;
+    this.intCreditCard = creditCardNumber;
+
   }
 
   /**
-  * Getter method for strUsername
-  * @return Username
+  * Gets the credit card of the user
+  *
+  * @return credit card number of user
   */
-  public String getUsername() {
-    return strUsername;
+  public int getCard() {
+    return this.intCreditCard;
   }
+
   /**
-  * Getter method for strGame
-  * @return Game you are watching
+  * Gets the name of the user
+  *
+  * @return name of the user
   */
-  public String getGame() {
-    return strGame;
+  public String getName() {
+    return this.strUsername;
   }
+
   /**
-  * Getter method for intGiftedSubs
-  * @return amount of Gifted Subs
+  * Gets whether user can buy any bits or not
+  *
+  * @return boolean pf whether the user can donate anything
   */
-  public int getGiftedSubs() {
-    return intGiftedSubs;
+  public boolean canBuy() {
+
+    if (this.intAge > 17 && this.intCreditCard != -1) {
+      return true;
+    }
+    else{
+      return false;
+    }
+
   }
-  /**
-  * Getter method for intDonations
-  * @return Donation amount
-  */
-  public int getDonations() {
-    return intDonations;
-  }
-  /**
-  * Getter method for intBits
-  * @return amount of Bits cheering
-  */
-  public int getBits() {
-    return intBits;
-  }
-  /**
-  * Getter method for intClips
-  * @return amount of Clips created
-  */
-  public int getClips() {
-    return intClips;
-  }
-  /**
-  * Getter method for intOption
-  * @return option numbers for chat function
-  */
-  public int getOption(){
-    return intOption;
-  }
+
+
+  
 }

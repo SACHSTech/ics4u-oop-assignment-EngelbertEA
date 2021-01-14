@@ -1,29 +1,85 @@
-package TwitchChat;
+package TwitchPlatform;
 
-import TwitchChat.*;
+/**
+* Class file for creating the Twitch platform
+* 
+*/
 
-public class Moderator extends Users{
-  
-  private int intAdBreak;
-  private int intTimeOut;
-  private String strStreamTitle;
+import java.util.*;
 
-  public Moderator(String Username, String Game, int GiftedSubs, int Donations, int Bits, int Option, int Clips, int AdBreak, int TimeOut, String StreamTitle) {
-    super(Username, Game, GiftedSubs, Donations, Bits, Clips, Option);
-    this.intAdBreak = AdBreak;
-    this.intTimeOut = TimeOut;
-    this.strStreamTitle = StreamTitle;
+public class Twitch {
+
+  // creating variables
+  private ArrayList<Broadcaster> streamers;
+  private ArrayList<Broadcaster> activeStreamers;
+  private int intTotalViewers;
+  private Viewer user;
+
+  /**
+  * Constructor - creates new instance of an twitch object
+  *
+  * @param totalViewers - total number of viewers on the platform
+  */
+  public Twitch(int totalViewers, Viewer user) {
+    this.intTotalViewers = totalViewers;
+    streamers = new ArrayList<>();
+    activeStreamers = new ArrayList<>();
+    this.user = user;
   }
 
-  public int getAdBreak() {
-    return intAdBreak;
+  /**
+  * Add streamers to this class
+  *
+  * @param streamer - the streamer to add to the site
+  */
+  public void addStreamer(Broadcaster streamer) {
+    this.streamers.add(streamer);
   }
 
-  public int getTimeOut() {
-    return intTimeOut;
+  /**
+  * Add an active streamer to the list of currently live streamers
+  *
+  * @param streamer - the streamer to add to the arraylist
+  */
+  public void addActivetreamer(Broadcaster streamer) {
+    this.activeStreamers.add(streamer);
   }
 
-  public String getStreamTitle() {
-    return strStreamTitle;
+  /**
+  * Get list of active streamers
+  *
+  * @return arraylist of active streamers
+  */
+  public ArrayList<Broadcaster> getActiveStreamers() {
+    return this.activeStreamers;
   }
+
+  /**
+  * Get list of all streamers
+  *
+  * @return arraylist of all streamers
+  */
+  public ArrayList<Broadcaster> getAllStreamers() {
+    return this.streamers;
+  }
+
+  /**
+  * Add number of viewers to the site
+  *
+  * @param intNum - number of viewers to add to the site
+  */
+  public void addViewers(int intNum) {
+    this.intTotalViewers += intNum;
+  }
+
+  /**
+  * Gets total number of viewers on the site
+  *
+  * @return the number of viewers on the site
+  */
+  public int getTotalViewers() {
+    return this.intTotalViewers;
+  }
+
+
 }
