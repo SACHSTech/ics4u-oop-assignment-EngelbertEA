@@ -27,15 +27,6 @@ public class Main {
     // Created buffered reader
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
-    // Create twitch object and broadcasters to stream
-    Twitch twitch = new Twitch(10000000);
-    Broadcaster Ninja = new Broadcaster(1000000, 500000, "Fornite", 100000, "Ninja", 25, -1);
-    Broadcaster Shroud = new Broadcaster(2000000, 100000, "League of Legends", 10000, "Shroud", 23, -1);
-    Broadcaster Tfue = new Broadcaster(1000, 500, "Valorant", 100, "Tfue", 28, -1);
-    twitch.addStreamer(Ninja);
-    twitch.addStreamer(Shroud);
-    twitch.addStreamer(Tfue);
-
     // Create the user's account
     System.out.println("Welcome to Twitch!");
     System.out.println("To get started please create an account.");
@@ -46,9 +37,19 @@ public class Main {
     System.out.println("Enter a credit card number, type -1 if you do not want to:");
     intCardNumber = Integer.parseInt(keyboard.readLine());
     Viewer user = new Viewer(0, 0, strUserName, intAge, intCardNumber);
+
+    // Create twitch object and broadcasters to stream
+    Twitch twitch = new Twitch(10000000, user);
+    Broadcaster Ninja = new Broadcaster(1000000, 500000, "Fornite", 100000, "Ninja", 25, -1);
+    Broadcaster Shroud = new Broadcaster(2000000, 100000, "League of Legends", 10000, "Shroud", 23, -1);
+    Broadcaster Tfue = new Broadcaster(1000, 500, "Valorant", 100, "Tfue", 28, -1);
+    twitch.addStreamer(Ninja);
+    twitch.addStreamer(Shroud);
+    twitch.addStreamer(Tfue);
+
     System.out.println("Account created, welcome to Twitch!");
     System.out.println("There are currently, " + twitch.getTotalViewers() + " viewers.");
-
+    
     // Main program loop
     while (isWatching) {
       // Clear all currently streaming broadcasters
