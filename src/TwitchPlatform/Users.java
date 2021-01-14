@@ -8,7 +8,6 @@ public class Users {
   private String strGame;
   private int intDonations;
   private int intGiftedSubs;
-  private int intChannelPoints;
   private int intBits;
   private int intClips;
   private int intOption;
@@ -59,13 +58,6 @@ public class Users {
   */
   public int getDonations() {
     return intDonations;
-  }
-  /**
-  * Getter method for intChannelPoints
-  * @return amount of Channel Points a user has
-  */
-  public int getChannelPoints() {
-    return intChannelPoints;
   }
   /**
   * Getter method for intBits
