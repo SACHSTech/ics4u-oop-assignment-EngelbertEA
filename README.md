@@ -3,7 +3,7 @@
 
 [*see instructions for details*](Instructions.md)
 
-<img src="https://repl.it/@EngelbertAroozo/ics4u-oop-assignment-EngelbertEA#twitch.png">
+<img src="https://github.com/SACHSTech/ics4u-oop-assignment-EngelbertEA/blob/main/twitch.png">
 
 ## Summary
 *Include a brief summary that describes your system that your are modelling*
