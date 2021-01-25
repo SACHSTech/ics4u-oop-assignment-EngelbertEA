@@ -3,7 +3,7 @@
 
 [*see instructions for details*](Instructions.md)
 
-*Insert Class Diagram here*  
+<img src="https://github.com/SACHSTech/ics4u-oop-assignment-EngelbertEA/blob/main/twitch.png">
 
 ## Summary
 *Include a brief summary that describes your system that your are modelling*
